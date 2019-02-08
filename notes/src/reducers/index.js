@@ -4,7 +4,10 @@ import {
     FETCH_NOTES_FAIL,
     FETCH_NOTE,
     FETCH_NOTE_SUCCESS,
-    FETCH_NOTE_FAIL
+    FETCH_NOTE_FAIL,
+    CREATE_NOTE,
+    NEW_NOTE_SUCCESS,
+    NEW_NOTE_FAIL
 } from '../actions';
 
 
@@ -13,6 +16,8 @@ const initialState = {
     note: {},
     fetchingNotes: false,
     fetchingNote: false,
+    creatingNote: false,
+    noteId: null,
     error: null
 }
 
@@ -50,6 +55,23 @@ const reducer = (state = initialState, action) => {
         case FETCH_NOTE_FAIL:
             return {
                 ...state,
+                error: action.payload
+            }
+        case CREATE_NOTE:
+            return {
+                ...state,
+                creatingNote: true
+            }
+        case NEW_NOTE_SUCCESS:
+            return {
+                ...state,
+                creatingNote: false,
+                noteId: action.payload
+            }
+        case NEW_NOTE_FAIL:
+            return {
+                ...state,
+                creatingNote: false,
                 error: action.payload
             }
 
