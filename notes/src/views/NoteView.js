@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { } from '../actions';
+import { fetchNote } from '../actions';
 import Note from '../components/Note';
 
 class NoteView extends Component {
+    componentDidMount() {
+        this.props.fetchNote(this.props.match.params.noteId)
+    }
     render() {
         return (
             <Note />
@@ -19,7 +22,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        fetchNote: id => dispatch(fetchNote(id))
     }
 }
 
