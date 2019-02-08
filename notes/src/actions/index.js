@@ -15,7 +15,7 @@ export const fetchNotes = () => dispatch => {
         .then(data => {
             return dispatch ({
                 type: FETCH_NOTES_SUCCESS,
-                payload: data
+                payload: data.data
             })
         })
         .catch(err => {
