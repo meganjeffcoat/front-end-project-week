@@ -11,10 +11,10 @@ class App extends Component {
       <>
         <nav>
           <NavLink to='/'>Home</NavLink>
-          <NavLink to='/note/new'>Add Note</NavLink>
+          <NavLink to='/new-note'>Add Note</NavLink>
         </nav>
         <div className='app-container'>
-          <Route path='/note/new' component={NoteFormView} />
+          <Route path='/new-note' component={NoteFormView} />
           <Route exact path='/' component={NotesView} />
           <Route path='/note/:noteId' component={NoteView} />
         </div>
