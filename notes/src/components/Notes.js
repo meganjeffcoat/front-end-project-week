@@ -15,9 +15,9 @@ const Notes = props => {
                 {props.notes.map((n, i) => {
                     return(
                         <NoteTab key={i}>
-                            <NoteTabTitle>
+                            <Link to={`/note/${n._id}`} style={{ textDecoration: 'none' }}>
                                 {n.title}
-                            </NoteTabTitle>
+                            </Link>
                         </NoteTab>
                     )
                 })}

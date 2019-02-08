@@ -4,7 +4,7 @@ export const Header = styled.header`
     width: 25%;
     height: 100vh;
     position: fixed;
-    background-color: #322841;
+    background-color: #404040;
     float: left;
 `;
 
@@ -21,7 +21,8 @@ export const Logo = styled.h1`
 `;
 
 export const NavText = styled.p`
-    color: #DC9B40;
+    color: #ffffff;
+    text-decoration: none;
     font-size: 1.5rem;
 `;
 
@@ -56,10 +57,50 @@ export const NoteTab = styled.div`
     flexwrap: wrap;
     overflow: hidden;
     padding: 1%;
-    margin-top: 2%;;
-`
+    margin-top: 2%;
+`;
 
 export const NoteTabTitle = styled.h3`
     color: #98A7B7;
     margin: 0;
 `
+
+export const Button = styled.button`
+    background-color: #98A7B7;
+    display: block;
+    font-size: 1rem;
+    color: white;
+`;
+
+export const Form = styled.form`
+    background-color: #404040;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex: direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 70vh;
+    align-content: space-around;
+`;
+
+export const TitleInput = styled.input`
+    width: 90%;
+    height: 50px;
+    border: 4px solid #990000;
+    border-radius: 4px;
+`
+
+export const TextBodyInput = styled.textarea`
+    width: 90%;
+    height: 150px;
+    border: 4px solid #990000;
+    border-radius: 4px;
+    overflow: auto;
+`
+
+export const FormButton = styled.input`
+    width: 80%;
+    height: 50px;
+    background-color: #990000;
+` 

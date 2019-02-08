@@ -20,13 +20,13 @@ class App extends Component {
         <Header>
           <NavBar>
             <Logo>Notes</Logo>
-              <Link to='/'>
+              <Link to='/' style={{ textDecoration: 'none' }}>
                 <NavText>
                   <i className="fas fa-eye"></i>
                   View Notes
                 </NavText>
               </Link>
-            <Link to='/create-note'>
+            <Link to='/create-note' style={{ textDecoration: 'none' }}>
               <NavText>
                 <i className="fas fa-pencil-alt"></i>
                 Add Note

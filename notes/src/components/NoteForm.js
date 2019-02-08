@@ -1,14 +1,23 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import {
+    Logo,
+    Form,
+    TitleInput,
+    TextBodyInput,
+    FormButton
+} from '../styles'
+
 
 class NoteForm extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             title: '',
             textBody: ''
-        }
-    }
+        };
+    };
 
     componentDidMount = () => {
         if (this.props.update) {
@@ -17,47 +26,72 @@ class NoteForm extends Component {
                 textBody: this.props.note.textBody
             })
         }
-    }
+    };
 
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
-        })
-    }
+        });
+    };
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.update ? this.props.handleUpdate(this.state) : this.props.handleCreate(this.state)
-    }
+
+        this.props.update ? this.props.handleUpdate(this.state) : this.props.handleCreate(this.state);
+    };
 
     render() {
         return (
             <>
-                {this.props.update ? <h1>Edit Note</h1> : <h1>Add Note</h1>}
-                <form onSubmit={this.handleSubmit}>
-                    <input 
+                {
+                    this.props.update ?
+                    <Logo>Edit Note</Logo> :
+                    <Logo>Add Note</Logo>
+                }
+
+                <Form onSubmit={this.handleSubmit}>
+                    <TitleInput
                         type='text'
                         name='title'
-                        placeholder='Note Title'
-                        value={this.state.title}
-                        onChange={this.handleChange}
+                        placeholder='Type Title Here'
+                        value={
+                            this.state.title
+                        }
+                        onChange={
+                            this.handleChange
+                        }
                     />
-                    <input 
+
+                    <TextBodyInput
                         type='text'
                         name='textBody'
-                        placeholder='Type Your Note Here'
-                        value={this.state.textBody}
-                        onChange={this.handleChange}
+                        placeholder='Type Text Here'
+                        value={
+                            this.state.textBody
+                        }
+                        onChange = {
+                            this.handleChange
+                        }
                     />
-                    {this.props.update ? <input type='submit' value='Update Note' /> :
-                    <input 
-                        type='submit'
-                        value='Create Note'
-                    />}
-                </form>
+
+                    {
+                        this.props.update ?
+                            <FormButton
+                                type='submit'
+                                value='Update Note'
+                            />
+                        :
+                            <FormButton
+                                type='submit'
+                                value='Create Note'
+                            />
+                    }
+                </Form>
             </>
         )
-    }
+    };
 }
+
+
 
 export default NoteForm;
