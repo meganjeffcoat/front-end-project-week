@@ -51,3 +51,23 @@ export const fetchNote = id => dispatch => {
             })
         })
 }
+
+export const createNote = newNote => dispatch => {
+    dispatch({
+        type: CREATE_NOTE
+    })
+    axios
+        .get(`${URL}/note/create`, newNote)
+        .then(res => {
+            return dispatch({
+                type: NEW_NOTE_SUCCESS,
+                payload: res.data
+            })
+        })
+        .catch(err => {
+            return dispatch({
+                type: NEW_NOTE_FAIL,
+                payload: err
+            })
+        })
+}
