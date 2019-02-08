@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import NotesView from '../views/NotesView';
+import NotesView from './views/NotesView';
 import './App.css';
 
 class App extends Component {
