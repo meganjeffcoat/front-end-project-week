@@ -6,6 +6,9 @@ export const FETCH_NOTES_FAIL = 'FETCH_NOTES_FAIL';
 export const FETCH_NOTE = 'FETCH_NOTE';
 export const FETCH_NOTE_SUCCESS = 'FETCH_NOTE_SUCCESS';
 export const FETCH_NOTE_FAIL = 'FETCH_NOTE_FAIL';
+export const CREATE_NOTE = 'CREATE_NOTE';
+export const NEW_NOTE_SUCCESS = 'NEW_NOTE_SUCCESS';
+export const NEW_NOTE_FAIL = 'NEW_NOTE_FAIL';
 
 const URL = 'https://fe-notes.herokuapp.com';
 
