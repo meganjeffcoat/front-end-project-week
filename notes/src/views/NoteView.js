@@ -6,7 +6,7 @@ import Note from '../components/Note';
 class NoteView extends Component {
     render() {
         return (
-            <h1>Note View</h1>
+            <Note />
         )
     }
 }
