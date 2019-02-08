@@ -6,8 +6,7 @@ import {
     FETCH_NOTE_SUCCESS,
     FETCH_NOTE_FAIL,
     CREATE_NOTE,
-    NEW_NOTE_SUCCESS,
-    NEW_NOTE_FAIL
+    UPDATING_NOTE
 } from '../actions';
 
 
@@ -17,6 +16,7 @@ const initialState = {
     fetchingNotes: false,
     fetchingNote: false,
     creatingNote: false,
+    updatingNote: false,
     noteId: null,
     error: null
 }
@@ -26,35 +26,43 @@ const reducer = (state = initialState, action) => {
         case FETCH_NOTES:
             return {
                 ...state,
-                fetchingNotes: true
+                fetchingNotes: true,
+                creatingNote: false
             }
         case FETCH_NOTES_SUCCESS:
             return {
                 ...state,
                 fetchingNotes: false,
+                creatingNote: false,
                 notes: action.payload,
                 error: null
             }
         case FETCH_NOTES_FAIL:
             return {
                 ...state,
+                creatingNote: false,
                 error: action.payload
             }
         case FETCH_NOTE:
             return{
                 ...state,
-                fetchingNote: true
+                fetchingNote: true,
+                creatingNote: false,
+                updatingNote: false
             }
         case FETCH_NOTE_SUCCESS:
             return {
                 ...state,
                 fetchingNote: false,
+                creatingNote: false,
+                updatingNote: false,
                 note: action.payload,
                 error: null
             }
         case FETCH_NOTE_FAIL:
             return {
                 ...state,
+                creatingNote: false,
                 error: action.payload
             }
         case CREATE_NOTE:
@@ -62,17 +70,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 creatingNote: true
             }
-        case NEW_NOTE_SUCCESS:
+        case UPDATING_NOTE:
             return {
                 ...state,
-                creatingNote: false,
-                noteId: action.payload
-            }
-        case NEW_NOTE_FAIL:
-            return {
-                ...state,
-                creatingNote: false,
-                error: action.payload
+                updatingNote: true,
+                error: null
             }
 
         default:

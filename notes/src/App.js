@@ -11,12 +11,13 @@ class App extends Component {
       <>
         <nav>
           <NavLink to='/'>Home</NavLink>
-          <NavLink to='/new-note'>Add Note</NavLink>
+          <NavLink to='/create-note'>Add Note</NavLink>
         </nav>
         <div className='app-container'>
-          <Route path='/new-note' component={NoteFormView} />
+          <Route path='/create-note' component={NoteFormView} />
           <Route exact path='/' component={NotesView} />
           <Route path='/note/:noteId' component={NoteView} />
+          <Route update path='/note/:noteId/update' render={props => <NoteFormView {...props} update />} /> 
         </div>
       </>
     );

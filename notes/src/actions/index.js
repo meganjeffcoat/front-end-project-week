@@ -7,8 +7,7 @@ export const FETCH_NOTE = 'FETCH_NOTE';
 export const FETCH_NOTE_SUCCESS = 'FETCH_NOTE_SUCCESS';
 export const FETCH_NOTE_FAIL = 'FETCH_NOTE_FAIL';
 export const CREATE_NOTE = 'CREATE_NOTE';
-export const NEW_NOTE_SUCCESS = 'NEW_NOTE_SUCCESS';
-export const NEW_NOTE_FAIL = 'NEW_NOTE_FAIL';
+export const UPDATING_NOTE = 'UPDATING_NOTE'
 
 const URL = 'https://fe-notes.herokuapp.com';
 
@@ -52,22 +51,14 @@ export const fetchNote = id => dispatch => {
         })
 }
 
-export const createNote = newNote => dispatch => {
+export const createNote = () => dispatch => {
     dispatch({
         type: CREATE_NOTE
     })
-    axios
-        .get(`${URL}/note/create`, newNote)
-        .then(res => {
-            return dispatch({
-                type: NEW_NOTE_SUCCESS,
-                payload: res.data
-            })
-        })
-        .catch(err => {
-            return dispatch({
-                type: NEW_NOTE_FAIL,
-                payload: err
-            })
-        })
+}
+
+export const updateNote = () => dispatch => {
+    dispatch({
+        type: UPDATING_NOTE
+    })
 }
