@@ -9,6 +9,11 @@ class NotesView extends Component {
     }
 
     render() {
+        if (this.props.notes.length === 0) {
+            return setTimeout(() => {
+                return <h1>Loading Notes...</h1>
+            }, 1000)
+        }
         return (
             <Notes notes={this.props.notes} />
         )

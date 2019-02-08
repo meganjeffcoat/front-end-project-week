@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import NotesView from './views/NotesView';
+import NoteView from './views/NoteView';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         </nav>
         <div className='app-container'>
           <Route exact path='/' component={NotesView} />
+          <Route path='/note/:noteId' component={NoteView} />
         </div>
       </>
     );
