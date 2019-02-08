@@ -1,19 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+    Logo,
+    NotesContainer,
+    NoteTab,
+    NoteTabTitle
+} from '../styles';
 
 const Notes = props => {
     return (
         <div className='notes-container'>
-            <h1>Notes</h1>
-            {props.notes.map((n, i) => {
-                return(
-                    <div key={i}>
-                        <Link to={`/note/${n._id}`}>
-                            {n.title}
-                        </Link>
-                    </div>
-                )
-            })}
+            <Logo>Notes</Logo>
+            <NotesContainer>
+                {props.notes.map((n, i) => {
+                    return(
+                        <NoteTab key={i}>
+                            <NoteTabTitle>
+                                {n.title}
+                            </NoteTabTitle>
+                        </NoteTab>
+                    )
+                })}
+            </NotesContainer>
         </div>
     )
 }

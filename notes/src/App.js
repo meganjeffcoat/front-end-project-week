@@ -22,13 +22,13 @@ class App extends Component {
             <Logo>Notes</Logo>
               <Link to='/'>
                 <NavText>
-                  <i class="fas fa-eye"></i>
+                  <i className="fas fa-eye"></i>
                   View Notes
                 </NavText>
               </Link>
             <Link to='/create-note'>
               <NavText>
-                <i class="fas fa-pencil-alt"></i>
+                <i className="fas fa-pencil-alt"></i>
                 Add Note
               </NavText>
             </Link>

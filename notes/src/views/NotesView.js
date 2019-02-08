@@ -15,7 +15,7 @@ class NotesView extends Component {
             }, 1000)
         }
         return (
-            <Notes notes={this.props.notes} />
+            <Notes notes={this.props.notes} history={this.props.history} />
         )
     }
 }
