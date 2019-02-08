@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import NoteForm from '../components/NoteForm';
-import { createNote } from '../actions';
+import { createNote, updateNote } from '../actions';
+
+const URL = 'https://fe-notes.herokuapp.com';
 
 class NoteFormView extends Component {
     handleCreate = newNote => {

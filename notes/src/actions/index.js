@@ -7,7 +7,8 @@ export const FETCH_NOTE = 'FETCH_NOTE';
 export const FETCH_NOTE_SUCCESS = 'FETCH_NOTE_SUCCESS';
 export const FETCH_NOTE_FAIL = 'FETCH_NOTE_FAIL';
 export const CREATE_NOTE = 'CREATE_NOTE';
-export const UPDATING_NOTE = 'UPDATING_NOTE'
+export const UPDATING_NOTE = 'UPDATING_NOTE';
+export const DELETE_NOTE = 'DELETE_NOTE';
 
 const URL = 'https://fe-notes.herokuapp.com';
 
@@ -60,5 +61,11 @@ export const createNote = () => dispatch => {
 export const updateNote = () => dispatch => {
     dispatch({
         type: UPDATING_NOTE
+    })
+}
+
+export const deleteNote = () => dispatch => {
+    dispatch({
+        type: DELETE_NOTE
     })
 }

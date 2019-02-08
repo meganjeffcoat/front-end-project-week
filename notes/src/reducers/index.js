@@ -6,7 +6,8 @@ import {
     FETCH_NOTE_SUCCESS,
     FETCH_NOTE_FAIL,
     CREATE_NOTE,
-    UPDATING_NOTE
+    UPDATING_NOTE,
+    DELETE_NOTE
 } from '../actions';
 
 
@@ -17,6 +18,7 @@ const initialState = {
     fetchingNote: false,
     creatingNote: false,
     updatingNote: false,
+    deletingNote: false,
     noteId: null,
     error: null
 }
@@ -75,6 +77,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 updatingNote: true,
                 error: null
+            }
+        case DELETE_NOTE: 
+            return {
+                ...state,
+                deletingNote: true
             }
 
         default:
