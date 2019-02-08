@@ -9,7 +9,7 @@ class NoteView extends Component {
     }
     render() {
         return (
-            <Note />
+            <Note note={this.props.note} />
         )
     }
 }
